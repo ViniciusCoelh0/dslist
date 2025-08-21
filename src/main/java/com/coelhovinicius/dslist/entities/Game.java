@@ -22,16 +22,17 @@ public class Game {
 	//Customizando o nome da coluna no banco
 	@Column(name = "game_year")
 	private Integer year;
+	
 	private String genre;
 	private String platforms;
 	private Double score;
 	private String imgUrl;
 	
-	//Arrumando para aceitar mais de 255 caracteres
+	//Configurando para o banco de dados aceitar mais de 255 caracteres
 	@Column(columnDefinition = "TEXT")
 	private String shortDescription;
 	
-	//Arrumando para aceitar mais de 255 caracteres
+	//Configurando para o banco de dados aceitar mais de 255 caracteres
 	@Column(columnDefinition = "TEXT")
 	private String longDescription;
 	
