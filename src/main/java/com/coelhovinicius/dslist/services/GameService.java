@@ -11,8 +11,6 @@ import com.coelhovinicius.dslist.dto.GameMinDto;
 import com.coelhovinicius.dslist.entities.Game;
 import com.coelhovinicius.dslist.repositories.GameRepository;
 
-
-
 //Registrando como componente do sistema
 //Component ou
 @Service
