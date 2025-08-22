@@ -9,6 +9,7 @@ import org.springframework.transaction.annotation.Transactional;
 import com.coelhovinicius.dslist.dto.GameDto;
 import com.coelhovinicius.dslist.dto.GameMinDto;
 import com.coelhovinicius.dslist.entities.Game;
+import com.coelhovinicius.dslist.projections.GameMinProjection;
 import com.coelhovinicius.dslist.repositories.GameRepository;
 
 //Registrando como componente do sistema
@@ -29,6 +30,14 @@ public class GameService {
 	 @Transactional(readOnly = true)
 	 public List<GameMinDto> findAll(){
 		 List<Game> result = gameRepository.findAll();
+		 List<GameMinDto> dto = result.stream().map(g -> new GameMinDto(g)).toList();
+		 return dto;
+		 
+	 }
+	 
+	 @Transactional(readOnly = true)
+	 public List<GameMinDto> findByList(Long listId){
+		 List<GameMinProjection> result = gameRepository.searchByList(listId);
 		 List<GameMinDto> dto = result.stream().map(g -> new GameMinDto(g)).toList();
 		 return dto;
 		 
